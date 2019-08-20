@@ -2,8 +2,11 @@
 
 import json
 import argparse
+
 import sseclient
+
 from firebase import firebase
+
 
 class HNUser:
 
@@ -15,7 +18,8 @@ class HNUser:
         self.karma = user['karma']
         self.about = user['about']
         self.submitted = user['submitted']
-        
+
+
 class HNItem:
 
     def __init__(self, item):
@@ -24,7 +28,8 @@ class HNItem:
         for key in self.keys_list:
             if key in item.keys():
                 setattr(self, key, item[key])
-                
+
+
 class HNAPI:
 
     url = 'https://hacker-news.firebaseio.com/v0/'
@@ -95,8 +100,8 @@ class HNAPI:
             if msg_data is None:
                 continue
             function(msg_data)
-            
-    
+
+
 if __name__ == '__main__':
    parser = argparse.ArgumentParser(description='Hacker News Job Search')
    parser.add_argument('--user', dest='user', type=str)

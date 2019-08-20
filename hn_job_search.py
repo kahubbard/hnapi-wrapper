@@ -1,7 +1,9 @@
 #!/usr/bin/python
 
 import argparse
+
 from firebase import firebase
+
 import hnapi
 
 """
